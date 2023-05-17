@@ -1,18 +1,18 @@
 from flask import *
 from flask_socketio import *
 import bcrypt
-import mysql.connector
+# import mysql.connector
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret'
 
-db_config = {
-    "host": "localhost",
-    "user": "dog",
-    "password": "dog",
-    "database": "chat"
-}
-conn = mysql.connector.connect(**db_config)
+# db_config = {
+#     "host": "localhost",
+#     "user": "dog",
+#     "password": "dog",
+#     "database": "chat"
+# }
+# conn = mysql.connector.connect(**db_config)
 
 def login():
     if request.method == 'POST':
@@ -25,20 +25,20 @@ def login():
     return render_template('login.html')
 
 
-cursor = conn.cursor()
+# cursor = conn.cursor()
 
-query = "select * from userlogin"
-cursor.execute(query)
+# query = "select * from userlogin"
+# cursor.execute(query)
 
-result = cursor.fetchall()
-
-
-for row in result:
-    print(row)
+# result = cursor.fetchall()
 
 
-cursor.close()
-conn.close()
+# for row in result:
+#     print(row)
+
+
+# cursor.close()
+# conn.close()
 
 
 socketio = SocketIO(app)
