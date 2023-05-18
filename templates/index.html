@@ -9,12 +9,14 @@
 
 <body>
 
-  <div id="message-container">
+  <div id="message-container"></div>
+  <footer>
     <form id="message-form">
-      <input type="text" placeholder="メッセージを入力してください" id="message-input">
-      <input type="submit" value="送信" id="send-button">
+      <input type="text"  id="message-input">
+      <input type="submit" id="send-button">
+
     </form>
-  </div>
+  </footer>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>

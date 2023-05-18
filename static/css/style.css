@@ -7,9 +7,11 @@ body {
   margin: 0;
 }
 
+
 body, html {
   height: 100%;
 }
+
 
 #message-container {
   height: 100%;
@@ -19,24 +21,32 @@ body, html {
   background-color: hsl(219, 77%, 66%, .5);
   width: 100%;
   margin: 0 auto;
-  position: relative;
 }
 
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+}
 
 #message-form {
   width: 90%;
+  height: 20%;
   text-align: center;
-  position: absolute;
-  bottom: 0;
 }
 
 #message-input {
   width: 80%;
+  border-radius: 10px;
+  /* border: 2px solid gray; */
+  border: none;
+  background-color: rgb(207, 201, 201);
+  color: #5a4f4f;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0);
 }
 
 #send-button {
   margin-top: 10px;
 }
-
 
 

@@ -14,15 +14,15 @@ app.config['SECRET_KEY'] = 'secret'
 # }
 # conn = mysql.connector.connect(**db_config)
 
-def login():
-    if request.method == 'POST':
-        user_password = request.form['password']
-        password = user_password.encode('utf-8')
-        hashed_password = bcrypt.hashpw(password, bcrypt.gensalt()).decode('utf-8')
+# def login():
+#     if request.method == 'POST':
+#         user_password = request.form['password']
+#         password = user_password.encode('utf-8')
+#         hashed_password = bcrypt.hashpw(password, bcrypt.gensalt()).decode('utf-8')
 
-        # ログイン処理の実装
+#         # ログイン処理の実装
 
-    return render_template('login.html')
+#     return render_template('login.html')
 
 
 # cursor = conn.cursor()
@@ -46,12 +46,11 @@ socketio = SocketIO(app)
 
 def index():
     return render_template('index.html')
-
 @socketio.on('message')
 def handle_message(message):
     emit('message', message, broadcast=True)
 
+
 if __name__ == '__main__':
     socketio.run(app, allow_unsafe_werkzeug=True)
-
 
